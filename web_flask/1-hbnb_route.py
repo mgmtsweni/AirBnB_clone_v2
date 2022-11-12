@@ -7,12 +7,12 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello_world():
-    """Function that returns a print message"""
+    """Function that returns a printed message"""
     return 'Hello HBNB!'
 
 @app.route('/hbnb', strict_slashes=False)
 def hello_world():
-    """Function that returns a print message"""
+    """Function that display “HBNB” """
     return 'HBNB!'
 
 if __name__=='__main__':
