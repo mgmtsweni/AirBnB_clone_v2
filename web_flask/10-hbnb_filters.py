@@ -11,6 +11,7 @@ def tear_down(self):
     """Remove current SQLAlchemy session"""
     storage.close()
 
+
 @app.route('/hbnb_filters', strict_slashes=False)
 def filters():
     """display a HTML page like 6-index.html from static"""
@@ -19,6 +20,7 @@ def filters():
     return render_template('10-hbnb_filters.html', states=states,
                            filters=filters)
 
-if __name__=='__main__':
-    """Main Function """
+
+if __name__ == '__main__':
+    """Main Function"""
     app.run(host='0.0.0.0', port=5000, debug=True)
