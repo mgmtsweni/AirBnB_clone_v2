@@ -5,19 +5,19 @@ app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
-def hello_world():
-    """Function that displays Hello HBNB!"""
+def hello_hbnb():
+    """Function that displays 'Hello HBNB!' """
     return 'Hello HBNB!'
 
 
 @app.route('/hbnb', strict_slashes=False)
-def hello_world():
-    """Function that returns a printed message"""
-    return 'HBNB!'
+def hbnb():
+    """Function that display "HBNB" """
+    return 'HBNB'
 
 
 @app.route('c/<text>', strict_slashes=False)
-def hello_world():
+def hello_c():
     """display “C ” followed by the value of the text"""
     return 'C ' + text.replace('_', ' ')
 
