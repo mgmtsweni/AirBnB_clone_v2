@@ -13,7 +13,7 @@ def tear_down(self):
 
 
 @app.route('/cities_by_states', strict_slashes=False)
-def cities_by_states():
+def cities_by_states(states):
     """display cities all states in alphabetical order"""
     states = storage.all("State").values()
     return render_template('8-cities_by_states.html', states=states)

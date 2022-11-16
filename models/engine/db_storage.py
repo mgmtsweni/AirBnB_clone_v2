@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Contains the class DBStorage
-"""
-
+"""Contains the class DBStorage"""
 import models
 from models.amenity import Amenity
 from models.base_model import BaseModel, Base
@@ -66,8 +63,8 @@ class DBStorage:
     def reload(self):
         """reloads data from the database"""
         Base.metadata.create_all(self.__engine)
-        sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
-        Session = scoped_session(sess_factory)
+        session_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
+        Session = scoped_session(session_factory)
         self.__session = Session
 
     def close(self):
