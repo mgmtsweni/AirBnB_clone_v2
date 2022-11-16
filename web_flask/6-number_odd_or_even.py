@@ -16,14 +16,14 @@ def hbnb():
     return 'HBNB'
 
 
-@app.route('c/<text>', strict_slashes=False)
+@app.route('/c/<text>', strict_slashes=False)
 def hello_c():
     """display “C ” followed by the value of the text"""
     return 'C ' + text.replace('_', ' ')
 
 
 @app.route('python', strict_slashes=False)
-@app.route('python/<text>', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
 def hello_python(text='is cool'):
     """display “Python” followed by the value of the text"""
     return 'Python ' + text.replace('_', ' ')
