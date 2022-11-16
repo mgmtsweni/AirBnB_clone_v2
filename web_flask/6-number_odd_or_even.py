@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """A script that starts a Flask web application"""
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
@@ -17,8 +17,8 @@ def hbnb():
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def hello_c():
-    """display “C ” followed by the value of the text"""
+def c_route(text):
+    """ display “C ”, followed by the value of the text variable """
     return 'C ' + text.replace('_', ' ')
 
 
@@ -42,7 +42,7 @@ def isInterger(n):
 
 
 @app.route('/number_odd_or_even/<n>', strict_slashes=False)
-def isEven():
+def isEven(n):
     """display a HTML page only if n is an integer"""
     e_o = "event" if (n % 2 == 0) else "odd"
     return render_template('6-number_odd_or_even.html', n=n, e_o=e_o)
