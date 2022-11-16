@@ -3,8 +3,7 @@
 
 from models import storage
 from models.state import State
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
@@ -12,7 +11,7 @@ app = Flask(__name__)
 def states():
     """Returns a rendered html listing all states"""
     return render_template('7-states_list.html',
-                           states=storage.all('State').values())
+                           states=storage.all("State").values())
 
 
 @app.teardown_appcontext
@@ -22,4 +21,5 @@ def teardown(self):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    """Main Function"""
+    app.run(host='0.0.0.0', port=5000, debug=True)
